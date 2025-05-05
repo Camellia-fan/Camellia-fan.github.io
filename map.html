@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>丝绸之路地图</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/map.css">
+</head>
+<body>
+    <img src="img/background.png" alt="背景图片" class="background-image">
+    <nav>
+        <div class="top">
+            <img src="img/logo.png" class="logo">
+            <h1>驼铃千年</h1>
+            <ul>
+                <li><a href="index2.html" class="nav-link">首页</a></li>
+                <li><a href="map.html" class="nav-link">地图</a></li>
+                <li><a href="news.html" class="nav-link">新闻</a></li>
+                <li><a href="person.html" class="nav-link">个人中心</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="map-container">
+        <img src="img/map.png" alt="丝绸之路地图" class="map-image">
+        <!--这个要根据地图map调整点的位置-->
+        <div class="map-point" style="top:36%; left: 22%;" onclick="goToUnity('location1')">
+            <span class="map-point-text">当前所在地：月牙泉</span>
+        </div>
+        <div class="map-point" style="top: 71%; left: 26.5%;" onclick="goToUnity('location2')">
+            <span class="map-point-text">杭州</span>
+        </div>
+        <div class="map-point" style="top: 30%; left: 40.5%;" onclick="goToUnity('location3')">
+            <span class="map-point-text">景德镇</span>
+        </div>
+        <div class="map-point" style="top: 61%; left: 42%;" onclick="goToUnity('location4')">
+            <span class="map-point-text">福州</span>
+        </div>
+        <div class="map-point" style="top: 34%; left: 63.5%;" onclick="goToUnity('location5')">
+            <span class="map-point-text">京城</span>
+        </div>
+        <div class="map-point" style="top: 62%; left: 62%;" onclick="goToUnity('location6')">
+            <span class="map-point-text">安徽泾县</span>
+        </div>
+        <div class="map-point" style="top: 53%; left: 82%;" onclick="goToUnity('location7')">
+            <span class="map-point-text">武夷山</span>
+        </div>
+    </div>
+
+    <script>
+         // 检查是否是第一次访问地图页面
+    function checkFirstVisit() {
+        // 从 localStorage 中获取是否已经访问过地图页面的标志
+        const hasVisitedMap = localStorage.getItem('hasVisitedMap');
+
+        if (hasVisitedMap !== 'true') {
+            // 如果标志不存在或不为 'true'，表示是第一次访问
+            alert("恭喜你解锁地图！");
+            // 设置标志为 'true'，表示已经访问过
+            localStorage.setItem('hasVisitedMap', 'true');
+        }
+    }
+
+    // 页面加载时检查是否是第一次访问
+    window.onload = checkFirstVisit;
+    
+        // 跳转到 Unity 游戏界面或显示提示
+        function goToUnity(location) {
+            // 定义正在建设中的地点
+            const underConstructionLocations = ['location3','location4', 'location7'];
+    
+            if (location === 'location1') {
+            // 如果点击的是 location1（月牙泉），提醒用户已经在该地点
+            alert("你已经在该地点");
+        } else if (underConstructionLocations.includes(location)) {
+            // 如果地点在建设中，弹出提示并返回地图界面
+            alert("该项目在建设中，正在原路返回……");
+            window.location.href = "map.html"; // 返回地图界面
+        } else {
+            // 如果地点可用，跳转到对应的 Unity 游戏界面
+            window.location.href = `unity_game.html?location=${location}`;
+        }
+        }
+    </script>
+</body>
+</html>

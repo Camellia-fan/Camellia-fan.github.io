@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>驼铃千年-序章 黄沙之劫</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="background">
+        <img src="img/background.png" alt="背景图" class="background-image">
+    </div>
+    <!--主人公-->
+    <div id="character" class="character">
+        <img src="img/character1.png" alt="人物图" class="character-image">
+    </div>
+    <!-- NPC 图片 -->
+    <div id="NPC" class="NPC">
+         <img src="img/character2.png" alt="NPC图" class="npc-image">
+    </div>
+    <!--旁白框-->
+    <!--NPC对话框-->
+    <!--主角对话框-->
+    <div id="dialogue" class="dialogue" style="display: none;" onclick="nextStory('进入剧情')">
+        <div class="dialogue-header">
+            <span id="player-name-display"></span>
+        </div>
+        <div class="dialogue-content">
+            <p> </p>
+        </div>
+    </div>
+
+    <div id="controls" class="controls">
+        <button id="menu" onclick="showMenu()">☰</button>
+    </div>
+
+    <div id="name-input-overlay" style="display: flex;">
+        <div class="overlay-content">
+            <p>请输入你的名字：</p>
+            <input type="text" id="player-name" placeholder="你的名字">
+            <button onclick="startGame()">开始游戏</button>
+        </div>
+    </div>
+
+    <div id="menu-overlay" style="display:none;">
+        <div class="overlay-content2">
+            <button onclick="goHome()">返回首页</button>
+            <button onclick="back()">返回剧情</button>
+        </div>
+    </div>
+
+    <script src="java/script.js"></script>
+    <script>
+        // 假设在剧情结束时调用这个函数
+        function completeStory() {
+            // 设置初始剧情完成标志
+            localStorage.setItem('isStoryCompleted', 'true');
+            alert('初始剧情已完成，地图功能已解锁！');
+            // 可以选择跳转到首页或其他页面
+            window.location.href = 'map.html';
+        }
+    </script>
+</body>
+</html>

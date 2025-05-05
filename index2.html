@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>驼铃千年</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <img src="img/background.png" alt="背景图片" class="background-image">
+    <nav>
+        <div class="top">
+             <img src="img/logo.png" class="logo">
+             <h1>驼铃千年</h1>
+            <ul>
+                <li><a href="index2.html" class="nav-link">首页</a></li>
+                <li><a href="javascript:void(0);" class="nav-link" onclick="checkMapUnlock()">地图</a></li>
+                <li><a href="news.html" class="nav-link">新闻</a></li>
+                <li><a href="person.html" class="nav-link">个人中心</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="welcome-section">
+        <h2>欢迎来到丝绸之路</h2>
+    </div>
+
+    <div class="content-section">
+        <div class="story-telling">
+            <div class="story">
+                <h3>玩法丰富</h3>
+                <p>包含多种游戏，在玩中了解传统文化工艺</p>
+            </div>
+            <div class="story">
+                <h3>剧情精彩</h3>
+                <p>从阿拉伯到中国，途径各个地方，品味地域文化</p>
+            </div>
+            <div class="story">
+                <h3>制作精美</h3>
+                <p>无论是地图、人物……此处省略无数字</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-entry">
+        <button id="startGameBtn" onclick="window.location.href='story.html'">进入初始剧情</button>
+    </div>
+
+    <div class="footer">
+        <p>请先完成初始剧情，开启丝绸之路之旅</p>
+    </div>
+
+    <script>
+        // 检查地图是否解锁
+        function checkMapUnlock() {
+            // 从localStorage中获取初始剧情完成状态
+            const isStoryCompleted = localStorage.getItem('isStoryCompleted');
+            if (isStoryCompleted === 'true') {
+                // 如果完成了初始剧情，跳转到地图页面
+                window.location.href = 'map.html';
+            } else {
+                // 如果未完成初始剧情，提示用户
+                alert('请先完成初始剧情，地图功能才会解锁哦！');
+            }
+        }
+    </script>
+    <script>
+        // 检查地图是否解锁，并更新 footer 内容
+        function updateFooter() {
+            // 从 localStorage 中获取初始剧情完成状态
+            const isStoryCompleted = localStorage.getItem('isStoryCompleted');
+            const footer = document.querySelector('.footer p');
+    
+            if (isStoryCompleted === 'true') {
+                // 如果完成了初始剧情，更新 footer 内容
+                footer.textContent = '已完成初始剧情，恭喜你解锁地图！';
+            } else {
+                // 如果未完成初始剧情，保持默认提示
+                footer.textContent = '请先完成初始剧情，开启丝绸之路之旅';
+            }
+        }
+    
+        // 在页面加载时更新 footer 内容
+        window.onload = updateFooter;
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+.content-section {
+    width: 1200px;
+    margin:auto;
+    padding: 40px;
+    background-color:#ffffff62;
+    border-radius: 20px;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+}
+
+.story-telling {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap:30px;
+}
+
+.story {
+    flex: 1;
+    min-width: 250px;
+    background: linear-gradient(135deg,#a6b8c5,#d6bcc1);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.story:hover {
+    transform: scale(1.05);
+}
+
+.story h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.story p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.visionary-layout {
+    margin-top: 40px;
+    background-color:#e5ebef;
+    padding: 30px;
+    border-radius: 20px;
+    
+}
+
+.visionary-image {
+    width: 200px;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    margin: auto;
+    display: block;
+}
+
+.visionary-text {
+    font-size: 18px;
+    color:#331602;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.visionary-text h2 {
+    font-size: 28px;
+    color:#552504;
+    margin-bottom: 20px;
+}
+
+#startGameBtn {
+    background-color: #dbc7cb; /* 按钮的背景颜色 */
+    color: white; /* 按钮的文字颜色 */
+    border: none; /* 移除边框 */
+    padding: 10px 20px; /* 内边距 */
+    font-size: 18px; /* 字体大小 */
+    border-radius: 5px; /* 圆角边框 */
+    cursor: pointer; /* 鼠标悬停时显示为手形 */
+    transition: background-color 0.3s ease; /* 平滑过渡效果 */
+}
+
+#startGameBtn:hover {
+    background-color: #b1c9d2; /* 鼠标悬停时的背景颜色 */
+}

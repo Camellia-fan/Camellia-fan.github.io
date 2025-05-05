@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="css/person.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- 引入新的样式文件 -->
+</head>
+<body>
+    <img src="img/background.png" alt="背景图片" class="background-image">
+    <nav>
+        <div class="top">
+            <img src="img/logo.png" class="logo">
+            <h1>驼铃千年</h1>
+            <ul>
+                <li><a href="index2.html" class="nav-link">首页</a></li>
+                <li><a href="map.html" class="nav-link">地图</a></li>
+                <li><a href="news.html" class="nav-link">新闻</a></li>
+                <li><a href="person.html" class="nav-link">个人中心</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="person-center">
+        <h2>个人中心</h2>
+        <div class="info">
+            <p>玩家名: <span id="player-name"></span></p>
+            <p>邮箱: <span id="email"></span></p>
+            <p>密码: <span id="password"></span></p>
+            <p>语言选择: <span id="language"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // 获取玩家名并显示
+        function getPlayerName() {
+            const playerName = localStorage.getItem('playerName') || '未知玩家';
+            document.getElementById('player-name').textContent = playerName;
+        }
+    
+        // 获取用户信息（邮箱、密码等）
+        function getUserInfo() {
+            const email = localStorage.getItem('email') || '未设置';
+            const password = localStorage.getItem('password') || '未设置';
+            const language = localStorage.getItem('language') || '中文';
+    
+            document.getElementById('email').textContent = email;
+            document.getElementById('password').textContent = password;
+            document.getElementById('language').textContent = language;
+        }
+    
+        // 在页面加载时获取玩家名和其他用户信息
+        window.onload = function() {
+            getPlayerName(); // 获取并显示玩家名
+            getUserInfo();   // 获取并显示其他用户信息
+        };
+    </script>
+
+</body>
+</html>

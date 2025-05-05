@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>驼铃千年-新闻</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/news.css">
+</head>
+<body>
+    <img src="img/background.png" alt="背景图片" class="background-image">
+    <nav>
+        <div class="top">
+            <img src="img/logo.png" class="logo">
+            <h1>驼铃千年</h1>
+            <ul>
+                <li><a href="index2.html" class="nav-link">首页</a></li>
+                <li><a href="map.html" class="nav-link">地图</a></li>
+                <li><a href="news.html" class="nav-link">新闻</a></li>
+                <li><a href="person.html" class="nav-link">个人中心</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="news-container">
+        <div class="timeline">
+            <div class="timeline-header">
+                <h3>时间线</h3>
+            </div>
+            <div class="timeline-body">
+                <div class="month" data-month="2025-05">2025-05</div>
+                <div class="month" data-month="2025-04">2025-04</div>
+                <div class="month" data-month="2025-03">2025-03</div>
+                <div class="month" data-month="2025-02">2025-02</div>
+                <div class="month" data-month="2025-01">2025-01</div>
+            </div>
+        </div>
+        <div class="news-content">
+            <div class="news-header">
+                <h3>公告栏</h3>
+            </div>
+            <div class="news-body">
+                <div class="news-item" data-month="2025-05">
+                    <h4>2025-05</h4>
+                    <p>新增了丝绸之路地图的详细地点信息。</p>
+                    <p>修复了部分已知的性能问题。</p>
+                </div>
+                <div class="news-item" data-month="2025-04">
+                    <h4>2025-04</h4>
+                    <p>优化了个人中心的用户界面。</p>
+                    <p>新增了多语言支持。</p>
+                </div>
+                <div class="news-item" data-month="2025-03">
+                    <h4>2025-03</h4>
+                    <p>发布了游戏的初始版本。</p>
+                    <p>新增了登录和注册功能。</p>
+                </div>
+                <div class="news-item" data-month="2025-02">
+                    <h4>2025-02</h4>
+                    <p>完成了游戏的基本框架设计。</p>
+                </div>
+                <div class="news-item" data-month="2025-01">
+                    <h4>2025-01</h4>
+                    <p>项目启动。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 获取时间线和消息框
+        const timelineBody = document.querySelector('.timeline-body');
+        const newsItems = document.querySelectorAll('.news-item');
+
+        // 添加滑动效果
+        timelineBody.addEventListener('wheel', (event) => {
+            event.preventDefault();
+            timelineBody.scrollLeft += event.deltaY;
+        });
+
+        // 添加点击事件
+        timelineBody.addEventListener('click', (event) => {
+            const target = event.target;
+            if (target.classList.contains('month')) {
+                const month = target.getAttribute('data-month');
+                showNews(month);
+            }
+        });
+
+        // 显示对应月份的消息
+        function showNews(month) {
+            newsItems.forEach(item => {
+                if (item.getAttribute('data-month') === month) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // 默认显示第一个月份的消息
+        showNews('2025-05');
+    </script>
+</body>
+</html>

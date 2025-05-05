@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color:#ffffff;
+    color: #333;
+    line-height: 1.6;
+    
+}
+*{
+    box-sizing: border-box;
+}
+nav{
+    /*background-color:#742d0a59;*/
+    background: linear-gradient(135deg,#a6b8c554,#fdfbfb4d);
+    
+}
+.top{
+    width: 1200px; margin: auto;display: flex;
+    justify-content: space-between;}
+    .top h1{color: #ffffff; }
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    margin: auto;
+    flex: 1;
+    display: flex;justify-content: end;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 0px 10px;
+    display: inline-block;
+    transition:background 0.3s,color 0.3s;
+}
+nav ul li a:hover{
+    background-color:#fdeab2;
+    color:#742e0a;
+    border-radius:5px;
+}
+
+.nav-link {
+    text-decoration: none; /* 去除下划线 */
+    color: white; /* 设置文字颜色 */
+    padding: 10px 15px; /* 设置内边距 */
+    display: inline-block; /* 设置为内联块元素 */
+    border: 1px solid transparent; /* 透明边框 */
+    border-radius: 5px; /* 圆角边框 */
+    transition: background-color 0.3s, color 0.3s; /* 平滑过渡效果 */
+}
+
+.nav-link:hover {
+    background-color: #ffffff; /* 悬停时的背景颜色 */
+    color: #cda39f; /* 悬停时的文字颜色 */
+}
+.welcome-section {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#463043;
+    text-align: center;
+    font-size: 25px;
+    font-family:宋体;
+    letter-spacing: 8px;
+    margin-bottom: 40px;
+}
+.footer {
+    background: linear-gradient(135deg,#a6b8c55e,#d6bcc171);
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    padding: 10px 0;
+    margin-top: 40px;
+}
+.clock{
+    display: flex;
+}
+.clock p{
+    width: 20px;
+    font-size: 20px;
+    color: #f9e5a8;
+    text-align: center;
+    font-family: "Kanit";
+    font-weight: 900;
+    text-shadow: 0 1px 0 #f9e5a8,
+    0 2px 0 #bda8a8,
+    0 3px 0 #d8a1a1,
+    0 4px 0 #d59999,
+    0 5px 0 #d29292,
+    0 6px 0 #cf8b8b,
+    0 7px 0 #cc8484,
+    0 8px 0 #c97d7d,
+    0 0 5px rgba(231,156,156,0.05),
+    0 -1px 3px rgba(231,156,156,0.2),
+    0 9px 9px rgba(231,156,156,0.3),
+    0 12px 12px rgba(231,156,156,0.3),
+    0 15px 15px rgba(231,156,156,0.3);
+}
+
+.logo {
+    width: 6%; 
+    height: 6%; 
+    margin: 8px;
+}
+
+.background-image {
+    position: fixed; /* 固定图片位置 */
+    top: 0;
+    left: 0;
+    width: 100%; /* 图片宽度 */
+    height: 100%; /* 图片高度 */
+    z-index: -1; /* 确保图片在内容下方 */
+}

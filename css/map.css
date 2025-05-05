@@ -1,0 +1,91 @@
+.map-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.map-image {
+    display: block;
+    margin: auto;
+    width: 100%; /* 调整宽度以适应屏幕 */
+    height: auto;
+    object-fit: contain;
+}
+
+.map-point {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 10; /* 确保点在水波上方 */
+}
+
+.map-point:hover {
+    transform: scale(1.2);
+}
+
+/* 添加水波效果 */
+.map-point::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgb(255, 255, 255); /* 半透明白色 */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ripple 2s infinite ease-out;
+    z-index: -1; /* 确保水波在点的下方 */
+}
+
+.map-point::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(249, 234, 222, 0.726); /* 更透明的白色 */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ripple 2s infinite ease-out;
+    animation-delay: 1s; /* 延迟1秒开始动画 */
+    z-index: -1; /* 确保水波在点的下方 */
+}
+
+@keyframes ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.6;
+    }
+    100% {
+        width: 40px; /* 水波的最大直径 */
+        height: 40px;
+        opacity: 0; /* 水波逐渐消失 */
+    }
+}
+/* 添加文本样式 */
+.map-point-text {
+    position: absolute;
+    top: 50%; /* 垂直居中 */
+    left: 100%; /* 文本显示在点的右侧 */
+    transform: translate(10px, -50%); /* 垂直居中并水平偏移10px */
+    background-color:  #7e5552ab; /* 半透明背景 */
+    color: white;
+    padding: 5px;
+    border-radius: 2px;
+    font-size: 12px;
+    white-space: nowrap; /* 防止文本换行 */
+    opacity: 0; /* 默认隐藏 */
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* 防止文本干扰鼠标事件 */
+}
+
+.map-point:hover .map-point-text {
+    opacity: 1; /* 鼠标悬停时显示文本 */
+}

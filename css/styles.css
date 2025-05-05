@@ -1,0 +1,149 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.character, .NPC {
+    position: fixed;
+    bottom: -2%;
+    left: -2%;
+    z-index: 1;
+}
+
+.character-image,.npc-image {
+    width: 17%;
+    height: 17%;
+    border-radius: 50%;
+    display: none; /* 默认隐藏 */
+}
+
+.dialogue {
+    position: fixed;
+    bottom: 6%;
+    left: 12%;
+    right: 3%;
+    width: 80%; /* 固定宽度 */
+    height: 17%; /* 固定高度 */
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 12px;
+    z-index: 2;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dialogue-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #000;
+}
+
+.dialogue-content {
+    margin-top: 10px;
+    color: black; /* 强制黑色 */
+}
+
+.controls {
+    position: fixed;
+    top: 15px;
+    right: 30px;
+    z-index: 3;
+    display: flex;
+    gap: 10px; /* 添加间距 */
+}
+
+button {
+    background-color: #f9f0f9d7;
+    color: #463043;
+    padding: 10px; /* 增大按钮大小 */
+    margin: 4px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* 增大字体大小 */
+}
+
+button:hover {
+    background-color: #ffffff9b;
+}
+
+#overlay, #menu-overlay, #name-input-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 4;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.overlay-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+.overlay-content2 {
+    background-color:#ffffff;
+    width: 20%;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex; /* 启用弹性布局 */
+    flex-direction: column; /* 设置为竖向排列 */
+    justify-content: center; /* 垂直居中 */
+    align-items: center; /* 水平居中 */
+    gap: 10px; /* 按钮之间的间距 */
+}
+
+.prologue {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 2;
+    text-align: center;
+    transition: opacity 1s;
+}
+
+.prologue-content {
+    font-size: 18px;
+}
+
+.prologue-content h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.prologue-content hr {
+    margin: 10px 0;
+}
