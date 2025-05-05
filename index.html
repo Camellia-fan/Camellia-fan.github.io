@@ -4,23 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>驼铃千年</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <img src="img/background.png" alt="背景图片" class="background-image">
     <nav>
         <div class="top">
+            <img src="img/logo.png" class="logo">
             <h1>驼铃千年</h1>
             <ul>
-                <li><a href="index.html">首页</a></li>
-                <li><a href="about.html">充值中心</a></li>
-                <li><a href="contact.html">登录</a></li>
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="login.html" class="nav-link">注册</a></li>
+                <li>
+                    <label for="language-select"class="nav-link">语言</label>
+                    <select id="language-select">
+                        <option value="zh-CN">中文</option>
+                        <option value="en-US">English</option>
+                        <option value="ar-SA">العربية</option>
+                    </select>
+                </li>
             </ul>
         </div>
     </nav>
     <div class="welcome-section">
-        <h2>欢迎来到我的世界</h2>
-        <p>网站正在创建中……</p>
+        <h2>欢迎来到丝绸之路</h2>
     </div>
-</body>
+
+    <div class="content-section">
+        <div class="story-telling">
+            <div class="story">
+                <h3>玩法丰富</h3>
+                <p>包含多种游戏，在玩中了解传统文化工艺</p>
+            </div>
+            <div class="story">
+                <h3>剧情精彩</h3>
+                <p>从阿拉伯到中国，途径各个地方，品味地域文化</p>
+            </div>
+            <div class="story">
+                <h3>制作精美</h3>
+                <p>无论是地图、人物……此处省略无数字</p>
+            </div>
+        </div>
+    </div>
+     <div class="footer">
+        <p>请先<a href="login.html" >注册</a>游戏，开启剧情</p>
+    </div>
+    </body>
 </html>
 
