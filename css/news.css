@@ -4,7 +4,7 @@
     width: 1200px;
     margin: 40px auto;
     padding: 40px;
-    background-color: #ffffff;
+    background-color: #ffffffa8;
     border-radius: 20px;
     box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
 }
@@ -13,13 +13,13 @@
     width: 200px;
     height: 600px;
     overflow: hidden;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid #d6bcc1;
 }
 
 .timeline-header {
     text-align: center;
     padding: 10px 0;
-    background-color: #f1f1f1;
+    background-color: #d6bcc1ad;
 }
 
 .timeline-body {
@@ -32,13 +32,13 @@
 .month {
     padding: 10px;
     margin: 5px 0;
-    background-color: #ddd;
+    background-color: #d6bcc1b0;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .month:hover {
-    background-color: #ccc;
+    background-color: #a6b8c5b7;
 }
 
 .news-content {
@@ -49,7 +49,7 @@
 .news-header {
     text-align: center;
     padding: 10px 0;
-    background-color: #f1f1f1;
+    background-color: #d6bcc1ad;
 }
 
 .news-body {
