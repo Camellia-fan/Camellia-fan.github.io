@@ -68,12 +68,15 @@
         // 跳转到 Unity 游戏界面或显示提示
         function goToUnity(location) {
             // 定义正在建设中的地点
-            const underConstructionLocations = ['location3','location4', 'location7'];
+            const underConstructionLocations = ['location2','location3','location4','location6', 'location7'];
     
             if (location === 'location1') {
             // 如果点击的是 location1（月牙泉），提醒用户已经在该地点
             alert("你已经在该地点");
-        } else if (underConstructionLocations.includes(location)) {
+        } 
+        else if (location === 'location5') {
+            window.location.href = `https://glittery-toffee-71cad8.netlify.app/`;}
+            else if (underConstructionLocations.includes(location)) {
             // 如果地点在建设中，弹出提示并返回地图界面
             alert("该项目在建设中，正在原路返回……");
             window.location.href = "map.html"; // 返回地图界面
