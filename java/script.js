@@ -275,7 +275,7 @@ function nextStory() {
                 playerNameDisplay.textContent = document.getElementById("player-name").value; // 显示玩家名字
                 npcImage.style.display = "none"; // 隐藏NPC图
             } else if (currentStory.speaker === "NPC") {
-                npcImage.style.display = "block"; // 显示NPC图
+                npcImage.style.display = "none"; // 由于没有，暂不显示
                 npcImage.src = `img/${currentStory.characterImage}`; // 更新NPC图
                 playerNameDisplay.textContent = "老者"; // 显示NPC名字
                 characterImage.style.display = "none"; // 隐藏主角图
