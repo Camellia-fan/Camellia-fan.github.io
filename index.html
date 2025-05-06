@@ -14,12 +14,12 @@
     <nav>
         <div class="top">
             <img src="img/logo.png" class="logo">
-            <h1>驼铃千年</h1>
+            <h1 data-i18n="header-title">驼铃千年</h1>
             <ul>
-                <li><a href="index.html" class="nav-link">首页</a></li>
-                <li><a href="login.html" class="nav-link">注册</a></li>
+                <li><a href="index.html" class="nav-link" data-i18n="nav-home">首页</a></li>
+                <li><a href="login.html" class="nav-link" data-i18n="nav-register">注册</a></li>
                 <li>
-                    <label for="language-select"class="nav-link">语言</label>
+                    <label for="language-select" class="nav-link" data-i18n="nav-language">语言</label>
                     <select id="language-select">
                         <option value="zh-CN">中文</option>
                         <option value="en-US">English</option>
@@ -30,28 +30,98 @@
         </div>
     </nav>
     <div class="welcome-section">
-        <h2>欢迎来到丝绸之路</h2>
+        <h2 data-i18n="welcome">欢迎来到丝绸之路</h2>
     </div>
 
     <div class="content-section">
         <div class="story-telling">
             <div class="story">
-                <h3>玩法丰富</h3>
-                <p>包含多种休闲游戏，在玩中了解传统文化工艺</p>
+                <h3 data-i18n="gameplay">玩法丰富</h3>
+                <p data-i18n="gameplay-description">包含多种游戏，在玩中了解传统文化工艺</p>
             </div>
             <div class="story">
-                <h3>剧情精彩</h3>
-                <p>从阿拉伯到中国，途径各个地方，品味地域文化</p>
+                <h3 data-i18n="story">剧情精彩</h3>
+                <p data-i18n="story-description">从阿拉伯到中国，途径各个地方，品味地域文化</p>
             </div>
             <div class="story">
-                <h3>制作精美</h3>
-                <p>无论是配色、地图、人物都采用了高质量的美术设计，给人视觉上的享受</p>
+                <h3 data-i18n="graphics">制作精美</h3>
+                <p data-i18n="graphics-description">无论是地图、人物……此处省略无数字</p>
             </div>
         </div>
     </div>
-     <div class="footer">
-        <p>请先<a href="login.html" >注册</a>游戏，开启剧情</p>
+    <div class="footer">
+        <p data-i18n="footer">请先<a href="login.html">注册</a>游戏，开启剧情</p>
     </div>
-    </body>
-</html>
 
+    <script>
+        // 监听语言选择框的变化
+        document.addEventListener('DOMContentLoaded', function () {
+            const languageSelect = document.getElementById('language-select');
+            languageSelect.addEventListener('change', function () {
+                const selectedLanguage = this.value;
+                localStorage.setItem('language', selectedLanguage); // 存储语言到 localStorage
+                translatePage(selectedLanguage); // 立即翻译页面
+            });
+
+            // 页面加载时，根据存储的语言值翻译页面
+            const storedLanguage = localStorage.getItem('language') || 'zh-CN';
+            languageSelect.value = storedLanguage; // 设置下拉框的值
+            translatePage(storedLanguage); // 翻译页面
+        });
+
+        // 翻译页面的函数
+        function translatePage(language) {
+            const translations = {
+                'zh-CN': {
+                    'header-title': '驼铃千年',
+                    'nav-home': '首页',
+                    'nav-register': '注册',
+                    'nav-language': '语言',
+                    'welcome': '欢迎来到丝绸之路',
+                    'gameplay': '玩法丰富',
+                    'gameplay-description': '包含多种游戏，在玩中了解传统文化工艺',
+                    'story': '剧情精彩',
+                    'story-description': '从阿拉伯到中国，途径各个地方，品味地域文化',
+                    'graphics': '制作精美',
+                    'graphics-description': '无论是地图、人物……此处省略无数字',
+                    'footer': '请先<a href="login.html">注册</a>游戏，开启剧情'
+                },
+                'en-US': {
+                    'header-title': 'Camel Bells Through the Ages',
+                    'nav-home': 'Home',
+                    'nav-register': 'Register',
+                    'nav-language': 'Language',
+                    'welcome': 'Welcome to the Silk Road',
+                    'gameplay': 'Rich Gameplay',
+                    'gameplay-description': 'Includes various games to learn traditional cultural crafts',
+                    'story': 'Exciting Story',
+                    'story-description': 'From Arabia to China, passing through various places, experiencing regional cultures',
+                    'graphics': 'Beautiful Graphics',
+                    'graphics-description': 'Whether it is the map, characters... the list goes on',
+                    'footer': 'Please <a href="login.html">register</a> the game to start the story'
+                },
+                'ar-SA': {
+                    'header-title': 'الإبل الألفية',
+                    'nav-home': 'الرئيسية',
+                    'nav-register': 'التسجيل',
+                    'nav-language': 'اللغة',
+                    'welcome': 'مرحبا بكم في طريق الحرير',
+                    'gameplay': 'اللعب الغني',
+                    'gameplay-description': 'يشمل أنواعًا مختلفة من الألعاب لتعلم الحرف الثقافية التقليدية',
+                    'story': 'قصة مثيرة',
+                    'story-description': 'من العربية إلى الصين، عبر أماكن مختلفة، تجربة الثقافات الإقليمية',
+                    'graphics': 'رسومات جميلة',
+                    'graphics-description': 'سواء كانت الخريطة أو الشخصيات... وغير ذلك الكثير',
+                    'footer': 'يرجى <a href="login.html">التسجيل</a> في اللعبة لبدء القصة'
+                }
+            };
+
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                element.innerHTML = translations[language][key] || element.innerHTML; // 如果没有翻译内容，则保留原内容
+            });
+        }
+    </script>
+</body>
+</html>
